@@ -5,7 +5,7 @@ const player = new Player("vimeo-player", {
     width: 640
 });
 
-storageKey = 'videoplayer-current-time';
+const storageKey = 'videoplayer-current-time';
 
 const saveToLocalStorage = _.throttle((el) => {
     localStorage.setItem(storageKey, el.seconds);
