@@ -6,7 +6,6 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 import { galleryItems } from './gallery-items';
 // Change code below this line
-const liArray = [];
 
 // Звернаємось до классу gallery
 const galleryMarkup = galleryItems.map(item => `

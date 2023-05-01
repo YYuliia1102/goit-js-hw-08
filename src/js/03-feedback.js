@@ -14,8 +14,11 @@ const saveStateToLocalStorage = _.throttle(() => {
         email: emailInput.value,
         message: messageInput.value,
     };
+
     localStorage.setItem(storageKey, JSON.stringify(state));
 }, 500);
+
+
 
 // Функція, що заповнює поля форми з локального сховища
 function populateFormFieldsFromLocalStorage() {
@@ -45,8 +48,12 @@ window.addEventListener('load', populateFormFieldsFromLocalStorage);
 feedbackForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const state = JSON.parse(localStorage.getItem(storageKey));
-    console.log(state);
-    clearStateAndFormFields();
+    if (!state.email || !state.message) {
+        alert("Всі поля форми повинні бути заповненні!");
+    } else {
+        console.log(state);
+        clearStateAndFormFields();
+    }
 });
 
 
