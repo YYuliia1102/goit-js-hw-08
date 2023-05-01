@@ -38,7 +38,6 @@ function clearStateAndFormFields() {
 feedbackForm.addEventListener('input', saveStateToLocalStorage)
 
 
-
 // Перевіряємо наявність даних в локальному сховищі при завантаженні сторінки та заповнюємо поля форми
 window.addEventListener('load', populateFormFieldsFromLocalStorage);
 
